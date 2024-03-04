@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Test Web Api Malicious Input</title>
+    <link href="Content/css-reset.css" rel="stylesheet" />
+    <link href="TestPage.css" rel="stylesheet" />
+</head>
+<body>
+    <header><h1>Test Web Api Malicious Input</h1></header>
+    <main>
+        <section class="malicious-types-cont">
+            <h2>This Page Malicious Input Info</h2>
+            <ul class="section-data">
+                <li>
+                    <p class="malicious-type-info-prgh" id="prghInfoIsNotID">
+                        0 <b>></b> <span class="malicious-type-label">Entity ID</span> <b><=</b> 1000  (for this example)
+                    </p>
+                </li>
+                <li>
+                    <p class="malicious-type-info-prgh" id="prghInfoIsNotDictionaryID">
+                        0 <b>></b> <span class="malicious-type-label">Dictionary ID</span> <b><=</b> 100  (for this example)
+                    </p>
+                </li>
+                <li>
+                    <div class="malicious-type-info-prgh" id="prghInfoIsSQLInjection">
+                        <span class="malicious-type-label">SQL Injection possible words</span><b>:</b><br />
+                        <p>
+                        --, &nbsp;;--, &nbsp;;, &nbsp;/*, &nbsp;*/, &nbsp;@@, &nbsp;@, &nbsp;char, &nbsp;nchar, &nbsp;varchar, &nbsp;nvarchar, &nbsp;alter, &nbsp;
+                        begin, &nbsp;cast, &nbsp;create, &nbsp;cursor, &nbsp;declare, &nbsp;delete, &nbsp;drop, &nbsp;end, &nbsp;exec, &nbsp;execute,
+                        fetch, &nbsp;insert, &nbsp;kill, &nbsp;select, &nbsp;sys, &nbsp;sysobjects, &nbsp;syscolumns, &nbsp;table, &nbsp;update
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <p class="malicious-type-info-prgh" id="prghInfoIsNotEntityName">
+                        0 > <span class="malicious-type-label">Entity Name Max Length</span> <= 50  (for this example)
+                    </p>
+                </li>
+                <li>
+                    <p class="malicious-type-info-prgh" id="prghInfoIsNotEntityDescription">
+                        <span class="malicious-type-label">Entity Description Max Length</span> <= 500  (for this example)
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="malicious-input-cont">
+            <form>
+                <legend>Test Input Fields</legend>
+                <ul class="input-container">
+                    <li>
+                        <div class="input-li-container">
+                            <div class="input-field-div">
+                                <label for="painterID" class="input-text-label">Painter ID (must and Entity ID field):</label>
+                                <input type="text" class="input-text input-id-text" id="painterID" name="PainterID"><br><br>
+                            </div>
+                            <div class="explain-div">
+                                <p></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input-li-container">
+                            <div class="input-field-div">
+                                <label for="painterName" class="input-text-label">Painter Name (must and prone SQL Injection field):</label>
+                                <input type="text" class="input-text" id="painterName" name="PainterName"><br><br>
+                            </div>
+                            <div class="explain-div">
+                                <p></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input-li-container">
+                            <div class="input-field-div">
+                                <label for="artMovementId" class="input-text-label">Art Movement ID (must and Dictionary ID field):</label>
+                                <input type="text" class="input-text input-id-text" id="artMovementId" name="ArtMovementId">&nbsp;
+                                <select class="input-text input-id-text" style="width:131px;" id="artMovementIds">
+                                    <option value="1">Renaissance</option>
+                                    <option value="2">Baroque and Rococo</option>
+                                    <option value="3">Italian Impressionism</option>
+                                </select><br><br>
+                            </div>
+                            <div class="explain-div">
+                                <p></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input-li-container">
+                            <div class="input-field-div">
+                                <label for="infoLink" class="input-text-label">Info Link on Internet (prone SQL Injection field):</label>
+                                <input type="text" class="input-text" id="infoLink" name="InfoLink"><br><br>
+                            </div>
+                            <div class="explain-div">
+                                <p></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="input-li-container">
+                            <div class="input-field-div">
+                                <label for="myComments" class="input-text-label" style="vertical-align:top;">My Comments (prone SQL Injection field):</label>                                
+                                <textarea class="input-text input-textarea" id="myCommentsElem" name="MyComments">
+                                </textarea>
+                            </div>
+                            <div class="explain-div">
+                                <p></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <input type="button" class="submit-btn" value="Submit" onclick="submit_OnClick()" />
+            </form>
+        </section>
+
+        <section class="malicious-malicious-report-cont">
+            <h2>Result</h2>
+            <div class="result-cont">
+                <div class="result-text" id="resultText"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="Front_End/Model_DL/ajax-dl.js"></script>
+    <script src="Front_End/Model_DL/model.js"></script>
+    <script src="Front_End/Model_DL/model-painters.js"></script>
+    <script src="TestPage.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientInputSecurity", "ClientInputSecurity\ClientInputSecurity.csproj", "{21EB8ABF-1D74-487B-B7F9-42525587CEC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckMalicious", "CheckMalicious\CheckMalicious.csproj", "{8FDCEC18-26F9-447C-BDC0-5B55CF563D73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21EB8ABF-1D74-487B-B7F9-42525587CEC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21EB8ABF-1D74-487B-B7F9-42525587CEC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21EB8ABF-1D74-487B-B7F9-42525587CEC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21EB8ABF-1D74-487B-B7F9-42525587CEC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FDCEC18-26F9-447C-BDC0-5B55CF563D73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FDCEC18-26F9-447C-BDC0-5B55CF563D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FDCEC18-26F9-447C-BDC0-5B55CF563D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FDCEC18-26F9-447C-BDC0-5B55CF563D73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD8DDC39-24F0-455F-9569-82687F82E118}
+	EndGlobalSection
+EndGlobal

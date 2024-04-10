@@ -23,5 +23,4 @@ The "ClientInputSecurity" sub project runs Web Api and makes the tests against m
 The start page is TestPage.html
 
 ** Open Sql Server Management Studio and create the project database by TheArt.bak file.
-**
 
